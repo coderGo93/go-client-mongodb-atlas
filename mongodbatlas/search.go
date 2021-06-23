@@ -242,15 +242,13 @@ func (s *SearchServiceOp) UpdateAllAnalyzers(ctx context.Context, groupID, clust
 
 // SearchIndex index definition.
 type SearchIndex struct {
-	Analyzer       string                 `json:"analyzer,omitempty"`
-	Analyzers      map[string]interface{} `json:"analyzers,omitempty"` // Custom analyzers
-	CollectionName string                 `json:"collectionName"`
-	Database       string                 `json:"database"`
-	IndexID        string                 `json:"indexID,omitempty"`
-	Mappings       *IndexMapping          `json:"mappings,omitempty"`
-	Name           string                 `json:"name"`
-	SearchAnalyzer string                 `json:"searchAnalyzer,omitempty"`
-	Status         string                 `json:"status,omitempty"`
+	Analyzer       string        `json:"analyzer,omitempty"`
+	CollectionName string        `json:"collectionName"`
+	Database       string        `json:"database"`
+	IndexID        string        `json:"indexID,omitempty"`
+	Mappings       *IndexMapping `json:"mappings,omitempty"`
+	Name           string        `json:"name"`
+	SearchAnalyzer string        `json:"searchAnalyzer,omitempty"`
 }
 
 // IndexMapping containing index specifications for the collection fields.
@@ -283,8 +281,7 @@ type IndexField struct {
 // SearchAnalyzer custom analyzer definition.
 type SearchAnalyzer struct {
 	BaseAnalyzer     string   `json:"baseAnalyzer"`
-	MaxTokenLength   *int     `json:"maxTokenLength,omitempty"`
-	IgnoreCase       *bool    `json:"ignoreCase,omitempty"`
+	MaxTokenLength   *float64 `json:"maxTokenLength,omitempty"`
 	Name             string   `json:"name"`
 	StemExclusionSet []string `json:"stemExclusionSet,omitempty"`
 	Stopwords        []string `json:"stopwords,omitempty"`
